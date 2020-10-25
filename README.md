@@ -36,9 +36,40 @@ $ nano Homestead.yaml
 $ vagrant up
 ```
 
+- Run the database migrations
+```
+$ vagrant ssh
+$ cd code
+$ php artisan migrate
+$ exit
+```
+
+- Seed the database with records *(optional)*
+```
+$ vagrant ssh
+$ cd code
+$ php artisan db:seed
+$ exit
+```
+
 - The app will be live at http://bus-booking.local or http://homestead.test *(based on your [Hostname Resolution](https://laravel.com/docs/8.x/homestead#hostname-resolution) configuration)*
 
 #### Option #2: Using PHP server
+
+- Edit DB_* env vars
+```
+$ nano .env
+```
+
+- Run the database migrations
+```
+$ php artisan migrate
+```
+
+- Seed the database with records *(optional)*
+```
+$ php artisan db:seed
+```
 
 - Run PHP server
 ```
