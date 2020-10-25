@@ -89,7 +89,7 @@ $ php artisan serve
     - Step #1: Issuing an API Token
     ![docs/step1_issue_token.png](docs/step1_issue_token.png?raw=true "Step #1: Issuing API Tokens")
     - Step #2: Consuming APIs
-    ![docs/step2_consume_api.png](docs/step1_issue_token.png?raw=true "Step #2: Consuming APIs")
+    ![docs/step2_consume_api.png](docs/step2_consume_api.png?raw=true "Step #2: Consuming APIs")
 
 
 ## API Endpoints
