@@ -2,11 +2,13 @@
 
 A bus-booking system with Laravel
 
+
 ## Requirements
 
 - PHP >= 7.3
 
-## How to use
+
+## How to run
 
 - Install dependencies
 ```
@@ -77,3 +79,19 @@ $ php artisan serve
 ```
 
 - The app will be live at http://localhost:8000
+
+
+## How to use
+
+- Register a new account at http://homestead.test/register
+
+- Use the credentials with a device name to access API Endpoints
+    - Step #1: Issuing an API Token
+    ![docs/step1_issue_token.png](docs/step1_issue_token.png?raw=true "Step #1: Issuing API Tokens")
+    - Step #2: Consuming APIs
+    ![docs/step2_consume_api.png](docs/step1_issue_token.png?raw=true "Step #2: Consuming APIs")
+
+
+## API Endpoints
+
+**TODO**
