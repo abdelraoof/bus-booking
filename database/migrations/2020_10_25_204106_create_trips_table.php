@@ -18,7 +18,7 @@ class CreateTripsTable extends Migration
             $table->unsignedBigInteger('line_id');
             $table->unsignedBigInteger('bus_id');
             $table->unsignedBigInteger('captain_id');
-            $table->dateTime('leaves_at');
+            $table->dateTime('leaves_at')->index();
             $table->integer('duration_in_minutes');
             $table->timestamps();
         });

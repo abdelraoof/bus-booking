@@ -9,6 +9,15 @@ class Trip extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'leaves_at' => 'datetime',
+    ];
+
     public function line()
     {
         return $this->belongsTo(Line::class);

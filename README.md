@@ -101,3 +101,8 @@ Method | URI | Parameters  | Example | Function
 GET | /api/trips | start_station: *string* & end_station: *string* | `{ "start_station": "cairo", "end_station": "asyut" }` | Get a list of available trips.
 GET | /api/trips/{trip}/available_seats | start_station: *string* & end_station: *string* | `{ "start_station": "cairo", "end_station": "asyut" }` | Get a list of available seats to be booked for a trip.
 POST | /api/trips/{trip}/book | start_station: *string* & end_station: *string* & seats: *string* | `{ "start_station": "cairo", "end_station": "asyut", "seats": "3,4,5" }` | Book one or more seats.
+
+
+## TODO
+
+- Refactor API routes closures to controllers and API resources.

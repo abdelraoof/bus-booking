@@ -9,6 +9,17 @@ class Ride extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'trip_id',
+        'station_id',
+        'seat',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

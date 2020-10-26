@@ -30,7 +30,7 @@ class TripFactory extends Factory
             'captain_id' => function () {
                 return Captain::inRandomOrder()->first()->id;
             },
-            'leaves_at' => $this->faker->dateTimeInInterval('-10 days', '+10 days'),
+            'leaves_at' => $this->faker->dateTimeInInterval('-10 days', '+20 days'),
             'duration_in_minutes' => $this->faker->randomElement([30, 45, 60, 75, 90]),
         ];
     }
