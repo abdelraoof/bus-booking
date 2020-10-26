@@ -18,6 +18,29 @@ class LineSeeder extends Seeder
      */
     public function run()
     {
+        // Create Cairo-Asyut Line
+        Line::factory()->has(
+            Trip::factory()->count(100)
+        )
+        ->has(
+            Station::factory()
+                ->count(5)
+                ->state(new Sequence(
+                    ...City::whereIn('id', [1, 2, 3, 4, 5])->pluck('slug')
+                        ->map(function ($item) {
+                            return ['city_slug' => $item];
+                        })->all()
+                ))
+                ->state(new Sequence(
+                    ...collect(range(1, 5))
+                        ->map(function ($item) {
+                            return ['order' => $item];
+                        })->all()
+                ))
+        )
+        ->create();
+
+        // Create other Lines
         for ($i = 0; $i < 10; $i++) {
             Line::factory()->has(
                 Trip::factory()->count(100)
@@ -26,7 +49,7 @@ class LineSeeder extends Seeder
                 Station::factory()
                     ->count(10)
                     ->state(new Sequence(
-                        ...City::inRandomOrder()->take(10)->pluck('slug')
+                        ...City::whereNotIn('id', [1, 2, 3, 4, 5])->inRandomOrder()->take(10)->pluck('slug')
                             ->map(function ($item) {
                                 return ['city_slug' => $item];
                             })->all()
