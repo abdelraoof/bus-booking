@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    public function stations()
+    {
+        return $this->hasMany(Station::class, 'city_slug', 'slug');
+    }
 }

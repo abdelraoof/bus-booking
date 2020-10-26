@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Captain;
 use Illuminate\Database\Seeder;
 
 class CaptainSeeder extends Seeder
@@ -13,6 +14,6 @@ class CaptainSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Captain::factory()->count(10)->create();
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\City;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class CityFactory extends Factory
 {
@@ -22,7 +23,10 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->city,
+            'slug' => function (array $attributes) {
+                return Str::slug($attributes['name']);
+            },
         ];
     }
 }

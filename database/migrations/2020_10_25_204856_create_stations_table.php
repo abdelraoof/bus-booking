@@ -15,7 +15,13 @@ class CreateStationsTable extends Migration
     {
         Schema::create('stations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('line_id');
+            $table->string('city_slug');
+            $table->integer('order');
             $table->timestamps();
+
+            $table->unique(['line_id', 'city_slug']);
+            $table->unique(['line_id', 'order']);
         });
     }
 

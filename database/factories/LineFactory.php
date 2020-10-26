@@ -22,7 +22,7 @@ class LineFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'code' => $this->faker->unique()->bothify('?###'),
         ];
     }
 }

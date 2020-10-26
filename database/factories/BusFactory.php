@@ -22,7 +22,10 @@ class BusFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'plate_number' => $this->faker->unique()->bothify('??? ###'),
+            'model' => 'Toyota Hiace',
+            'color' => $this->faker->safeColorName,
+            'capacity' => 12,
         ];
     }
 }
