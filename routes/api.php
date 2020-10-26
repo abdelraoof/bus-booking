@@ -32,6 +32,8 @@ Route::post('/token', function (Request $request) {
         ]);
     }
 
+    $user->tokens()->where('name', $request->device_name)->delete();
+
     return $user->createToken($request->device_name)->plainTextToken;
 });
 
